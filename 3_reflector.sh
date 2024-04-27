@@ -17,7 +17,7 @@ END_ASCII
 check_continue "Setting up reflector"
 
 sudo pacman -Syy --noconfirm reflector
-sudo cat <<EOF > /etc/xdg/reflector/reflector.conf
+cat <<EOF | sudo tee /etc/xdg/reflector/reflector.conf > /dev/null
 --save /etc/pacman.d/mirrorlist
 --country ${reflectorCountries}
 --protocol https
