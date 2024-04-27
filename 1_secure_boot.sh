@@ -14,7 +14,7 @@ cat <<EOF
 EOF
  
 check_continue "setting up secure boot"
-sudo pacman -S --noconfirm sbctl
+sudo pacman -Syy --noconfirm sbctl
 
 sudo sbctl status
 check_continue "make sure that setup mode is enabled. If not, enable it in the BIOS"
