@@ -5,13 +5,13 @@ cd $(dirname $0)
 source check_continue
 source config
 
-cat <<EOF
+cat <<'END_ASCII'
  _____ ___ ____  _______        ___    _     _     
 |  ___|_ _|  _ \| ____\ \      / / \  | |   | |    
 | |_   | || |_) |  _|  \ \ /\ / / _ \ | |   | |    
 |  _|  | ||  _ <| |___  \ V  V / ___ \| |___| |___ 
 |_|   |___|_| \_\_____|  \_/\_/_/   \_\_____|_____|
-EOF                                                   
+END_ASCII                                                  
 
 check_continue "Setting up firewall"
 
