@@ -1,6 +1,7 @@
 #!/bin/bash
 clear
 
+cd $(dirname $0) 
 source check_continue
 source config
 
@@ -29,4 +30,4 @@ check_continue "all boot files should be signed"
 
 echo "please enable secure boot in the BIOS"
 check_continue "will reboot to BIOS now"
-systemctl reboot --firmware-setup
+sudo systemctl reboot --firmware-setup
