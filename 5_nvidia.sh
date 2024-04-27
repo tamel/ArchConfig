@@ -17,9 +17,6 @@ END_ASCII
 
 check_continue "installing nvidia drivers"
 
-sudo pacman -Syy
-sudo pacman -S --noconfirm nvidia nvidia-utils lib32-nvidia-utils
-
 loopState="running"
 
 while [ "$loopState" == "running" ];
@@ -51,6 +48,7 @@ sudo gawk -i inplace '$1 == "options" {print $0 " nvidia_drm.modeset=1"; next} {
 
 echo "enabling auto rebuild of initramfs after updateting nvidia drivers"
 
+mkdir -p /etc/pacman.d/hooks
 cat <<EOF | sudo tee /etc/pacman.d/hooks/nvidia.hook > /dev/null
 [Trigger]
 Operation=Install
@@ -69,5 +67,8 @@ Description=Updating NVIDIA module in initcpio
 Depends=mkinitcpio
 When=PostTransaction
 NeedsTargets
-Exec=/bin/sh -c 'while read -r trg; do case $trg in linux*) exit 0; esac; done; /usr/bin/mkinitcpio -P'
+Exec=/bin/sh -c 'while read -r trg; do case \$trg in linux*) exit 0; esac; done; /usr/bin/mkinitcpio -P'
 EOF
+
+sudo pacman -Syy
+sudo pacman -S --noconfirm nvidia nvidia-utils lib32-nvidia-utils
