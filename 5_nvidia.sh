@@ -48,7 +48,7 @@ sudo gawk -i inplace '$1 == "options" {print $0 " nvidia_drm.modeset=1 video=DP-
 
 echo "enabling auto rebuild of initramfs after updateting nvidia drivers"
 
-mkdir -p /etc/pacman.d/hooks
+sudo mkdir -p /etc/pacman.d/hooks
 cat <<EOF | sudo tee /etc/pacman.d/hooks/nvidia.hook > /dev/null
 [Trigger]
 Operation=Install
