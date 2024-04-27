@@ -5,13 +5,13 @@ cd $(dirname $0)
 source check_continue
 source config
 
-cat <<EOF
+cat <<'END_ASCII'
  _   ___     _____ ____ ___    _    
 | \ | \ \   / /_ _|  _ \_ _|  / \   
 |  \| |\ \ / / | || | | | |  / _ \  
 | |\  | \ V /  | || |_| | | / ___ \ 
 |_| \_|  \_/  |___|____/___/_/   \_\
-EOF
+END_ASCII
 
 check_continue "installing nvidia drivers"
 
