@@ -19,5 +19,5 @@ sudo pacman -Syy --noconfirm firewalld
 sudo systemctl enable firewalld
 sudo systemctl start firewalld
 
-read -p "Enter WIFI name so add it to the home zone" wifiName
-sudo nmcli connection modify Tamel-Home connection.zone home
+read -p "Enter WIFI name so add it to the home zone: " wifiName
+sudo nmcli connection modify ${wifiName} connection.zone home
