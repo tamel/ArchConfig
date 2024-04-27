@@ -13,18 +13,18 @@ cat <<EOF
 EOF
  
 check_continue "setting up secure boot"
-pacman -S --noconfirm sbctl
+sudo pacman -S --noconfirm sbctl
 
-sbctl status
+sudo sbctl status
 check_continue "make sure that setup mode is enabled. If not, enable it in the BIOS"
 
-sbctl create-keys
-sbctl enroll-keys -m
-sbctl sign -s -o /usr/lib/systemd/boot/efi/systemd-bootx64.efi.signed /usr/lib/systemd/boot/efi/systemd-bootx64.efi
-sbctl sign -s /boot/vmlinuz-linux
-sbctl sign -s /boot/EFI/Shell/shellx64.efi
-bootctl install
-sbctl verify
+sudo sbctl create-keys
+sudo sbctl enroll-keys -m
+sudo sbctl sign -s -o /usr/lib/systemd/boot/efi/systemd-bootx64.efi.signed /usr/lib/systemd/boot/efi/systemd-bootx64.efi
+sudo sbctl sign -s /boot/vmlinuz-linux
+sudo sbctl sign -s /boot/EFI/Shell/shellx64.efi
+sudo bootctl install
+sudo sbctl verify
 check_continue "all boot files should be signed"
 
 echo "please enable secure boot in the BIOS"
