@@ -17,6 +17,26 @@ EOF
 
 check_continue "installing some utils and setting correct time"
 
+cat <<EOF >> ~/.gitconfig
+[core]
+  editor = nvim
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  side-by-side = true
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default
+EOF
+
+
 sudo pacman -Syy
 sudo pacman -S --noconfirm ntp bat gcc make ripgrep fzf lazygit zoxide zsh tmux bat git-delta eza tldr thefuck neovim
 yay -S --answerdiff None --answerclean None --mflags "--noconfirm" google-chrome
