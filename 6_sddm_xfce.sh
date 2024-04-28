@@ -23,8 +23,8 @@ cat <<EOF | sudo tee /usr/share/sddm/scripts/Xsetup > /dev/null
 #!/bin/sh
 
 xrandr --output DP-1-0 --auto --primary
+xrandr --output eDP-1 --off
 EOF
 
 sudo systemctl enable sddm
 sudo systemctl start sddm
-
