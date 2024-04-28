@@ -17,7 +17,7 @@ EOF
 
 check_continue "installing sddm and xfce4"
 sudo pacman -Syy
-sudo pacman -S --noconfirm sddm xfce4
+sudo pacman -S --noconfirm sddm xfce4 xorg-xrandr
 
 cat <<EOF | sudo tee /usr/share/sddm/scripts/Xsetup > /dev/null
 #!/bin/sh
