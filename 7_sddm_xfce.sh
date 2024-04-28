@@ -33,6 +33,7 @@ Numlock=on
 EOF
 
 sudo localectl set-x11-keymap de
+sudo gtk-update-icon-cache --force /usr/share/icons/hicolor
 
 sudo systemctl enable sddm
-sudo systemctl start sdd
+sudo systemctl start sddm

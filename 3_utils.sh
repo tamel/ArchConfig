@@ -38,8 +38,9 @@ EOF
 
 
 sudo pacman -Syy
-sudo pacman -S --noconfirm ntp bat gcc make ripgrep fzf lazygit zoxide zsh tmux bat git-delta eza tldr thefuck neovim alacritty
+sudo pacman -S --noconfirm ntp bat gcc make ripgrep fzf lazygit zoxide zsh tmux bat git-delta eza tldr thefuck neovim alacritty stow python-setuptools fd
 yay -S --answerdiff None --answerclean None --mflags "--noconfirm" google-chrome
+yay -S ttf-meslo-nerd-font-powerlevel10k
 
 sudo timedatectl set-local-rtc 1
 sudo timedatectl set-ntp true

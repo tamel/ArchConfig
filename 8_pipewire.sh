@@ -19,7 +19,7 @@ EOF
 check_continue "setting up pipewire audio"
 
 sudo pacman -Syy
-sudo pacman -S --noconfirm pipewire pipewire-audio pipewire-alsa pipewire-pulse wireplumber alsa-utils
+sudo pacman -S --noconfirm pipewire pipewire-audio pipewire-alsa pipewire-pulse wireplumber alsa-utils pipewire-jack
 
 echo
 echo "maybe a reboot is required"
