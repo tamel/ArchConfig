@@ -3,7 +3,7 @@ clear
 
 set -euo pipefail
 
-cd $(dirname $0)
+cd "$(dirname "$0")" || exit
 source check_continue
 source config
 
@@ -21,5 +21,5 @@ sudo pacman -Syy --noconfirm firewalld
 sudo systemctl enable firewalld
 sudo systemctl start firewalld
 
-read -p "Enter WIFI name so add it to the home zone: " wifiName
-sudo nmcli connection modify ${wifiName} connection.zone home
+read -r -p "Enter WIFI name so add it to the home zone: " wifiName
+sudo nmcli connection modify "${wifiName}" connection.zone home

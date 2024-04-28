@@ -3,7 +3,7 @@ clear
 
 set -euo pipefail
 
-cd $(dirname $0)
+cd "$(dirname "$0")" || exit
 source check_continue
 source config
 
@@ -32,7 +32,7 @@ do
   echo "- kms is removed from the HOOKS array (this will prevent initramfs from containing the nouveau driver)"
   echo "- add the following modules to the MODULES array: nvidia nvidia_modeset nvidia_uvm nvidia_drm"
 
-  read -p "please choose: (e)open mkinitcpio or (c)continue: " mkinitSelection
+  read -r -p "please choose: (e)open mkinitcpio or (c)continue: " mkinitSelection
 
   case $mkinitSelection in
     e)
