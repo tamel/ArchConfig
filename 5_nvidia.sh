@@ -17,6 +17,10 @@ END_ASCII
 
 check_continue "installing nvidia drivers"
 
+echo "make sure to have the multilib repository enabled"
+echo "the repository can be enabled in /etc/pacman.conf"
+check_continue "Is multilib enabled?"
+
 loopState="running"
 
 while [ "$loopState" == "running" ];
