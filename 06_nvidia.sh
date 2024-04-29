@@ -48,8 +48,7 @@ do
 done
 
 echo "updating bootload entry to enable nvidia_drm.modeset"
-sudo gawk -i inplace '$1 == "options" {print $0 " nvidia_drm.modeset=1 nvidia_drm.fbdev=1 video=DP-1-0:3440x1440@165"; next} {print}' /boot/loader/entries/69-arch.conf
-
+sudo gawk -i inplace '$1 == "options" {print $0 " nvidia_drm.modeset=1 nvidia_drm.fbdev=1 video=DP-1-0:3440x1440@165 nvidia.NVreg_PreserveVideoMemoryAllocations=1"; next} {print}' /boot/loader/entries/69-arch.conf
 echo "enabling auto rebuild of initramfs after updateting nvidia drivers"
 
 sudo mkdir -p /etc/pacman.d/hooks
