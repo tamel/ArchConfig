@@ -16,4 +16,4 @@ cat <<EOF
 EOF
 
 sudo pacman -S hyprland libva-nvidia-driver
-sudo systemctl enable nvidia-suspend nvidia-hibernate nvidia-resume dunst qt6-wayland xdg-desktop-portal-hyprland
+sudo systemctl enable nvidia-suspend nvidia-hibernate nvidia-resume dunst qt6-wayland xdg-desktop-portal-hyprland waybar rofi-wayland
