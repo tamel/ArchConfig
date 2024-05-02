@@ -16,4 +16,8 @@ cat <<EOF
 EOF
 
 sudo pacman -S hyprland libva-nvidia-driver
-sudo systemctl enable nvidia-suspend nvidia-hibernate nvidia-resume dunst qt6-wayland xdg-desktop-portal-hyprland waybar rofi-wayland
+sudo systemctl enable nvidia-suspend nvidia-hibernate nvidia-resume dunst qt6-wayland xdg-desktop-portal-hyprland waybar rofi-wayland hyprcursor
+
+yay -S rose-pine-hyprcursor rose-pine-cursor
+
+ln -s /usr/share/icons/BreezeX-RosePine-Linux ~/.local/share/icons/default
