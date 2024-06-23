@@ -7,5 +7,5 @@ cd "$(dirname "$0")" || exit
 source check_continue
 source config
 
-cat <<EOF
+cat <<'END_ASCII'
 

@@ -7,13 +7,13 @@ cd "$(dirname "$0")" || exit
 source check_continue
 source config
 
-cat <<EOF
+cat <<'END_ASCII'
  ____  _    _   _ _____ _____ ___   ___ _____ _   _ 
 | __ )| |  | | | | ____|_   _/ _ \ / _ \_   _| | | |
 |  _ \| |  | | | |  _|   | || | | | | | || | | |_| |
 | |_) | |__| |_| | |___  | || |_| | |_| || | |  _  |
 |____/|_____\___/|_____| |_| \___/ \___/ |_| |_| |_|
-EOF
+END_ASCII
 
 check_continue "installing bluetooth drivers"
 

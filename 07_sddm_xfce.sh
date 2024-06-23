@@ -7,13 +7,13 @@ cd "$(dirname "$0")" || exit
 source check_continue
 source config
 
-cat <<EOF
+cat <<'END_ASCII'
  ____  ____  ____  __  __          __  _______ ____ _____ 
 / ___||  _ \|  _ \|  \/  |    _    \ \/ /  ___/ ___| ____|
 \___ \| | | | | | | |\/| |  _| |_   \  /| |_ | |   |  _|  
  ___) | |_| | |_| | |  | | |_   _|  /  \|  _|| |___| |___ 
 |____/|____/|____/|_|  |_|   |_|   /_/\_\_|   \____|_____|
-EOF
+END_ASCII
 
 check_continue "installing sddm and xfce4"
 sudo pacman -Syy
