@@ -7,43 +7,34 @@ cd "$(dirname "$0")" || exit
 source check_continue
 source config
 
-cat <<EOF
+cat <<'END_ASCII'
  _   _ _____ ___ _     ____  
 | | | |_   _|_ _| |   / ___| 
 | | | | | |  | || |   \___ \ 
 | |_| | | |  | || |___ ___) |
  \___/  |_| |___|_____|____/ 
-EOF
+END_ASCII
 
 check_continue "installing some utils and setting correct time"
 
-cat <<EOF >> ~/.gitconfig
-[core]
-  editor = nvim
-  pager = delta
-
-[interactive]
-  diffFilter = delta --color-only
-
-[delta]
-  navigate = true
-  side-by-side = true
-
-[merge]
-  conflictstyle = diff3
-
-[diff]
-  colorMoved = default
-EOF
-
 
 sudo pacman -Syy
-sudo pacman -S --noconfirm ntp bat gcc make ripgrep fzf lazygit zoxide zsh tmux bat git-delta eza tldr thefuck neovim alacritty stow python-setuptools fd wget usbutils
-yay -S --answerdiff None --answerclean None --mflags "--noconfirm" google-chrome
-yay -S ttf-meslo-nerd-font-powerlevel10k
+sudo pacman -S --noconfirm ntp kitty alacritty wget code figlet
 
 sudo timedatectl set-local-rtc 1
 sudo timedatectl set-ntp true
 
 sudo systemctl enable ntpd
 sudo systemctl start ntpd
+
+cat <<EOF
+enable multilib support!
+uncomment the following lines:
+
+#[multilib]
+#Include = /etc/pacman.d/mirrorlist
+
+EOF
+
+check_continue "opening /etc/pacman.conf"
+sudo vim /etc/pacman.conf
