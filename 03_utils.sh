@@ -19,7 +19,7 @@ check_continue "installing some utils and setting correct time"
 
 
 sudo pacman -Syy
-sudo pacman -S --noconfirm ntp kitty alacritty wget code figlet
+sudo pacman -S --noconfirm ntp kitty alacritty wget figlet btop xdg-user-dirs code dolphin
 
 sudo timedatectl set-local-rtc 1
 sudo timedatectl set-ntp true
@@ -38,3 +38,5 @@ EOF
 
 check_continue "opening /etc/pacman.conf"
 sudo vim /etc/pacman.conf
+
+xdg-user-dirs-update

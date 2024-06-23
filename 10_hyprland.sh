@@ -15,5 +15,5 @@ cat <<'END_ASCII'
 |_| |_| |_| |_|   |_| \_\_____/_/   \_\_| \_|____/ 
 END_ASCII
 
-sudo pacman -S hyprland dunst qt6-wayland xdg-desktop-portal-hyprland waybar rofi-wayland hyprcursor
+sudo pacman -S hyprland dunst qt6-wayland xdg-desktop-portal-hyprland waybar rofi-wayland hyprcursor xdg-desktop-portal-gtk
 
