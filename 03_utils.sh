@@ -19,7 +19,7 @@ check_continue "installing some utils and setting correct time"
 
 
 sudo pacman -Syy
-sudo pacman -S --noconfirm ntp kitty alacritty wget figlet btop xdg-user-dirs code dolphin
+sudo pacman -S --noconfirm ntp kitty alacritty wget figlet btop xdg-user-dirs code dolphin chezmoi
 
 sudo timedatectl set-local-rtc 1
 sudo timedatectl set-ntp true
