@@ -19,7 +19,7 @@ check_continue "installing some utils and setting correct time"
 
 
 sudo pacman -Syy
-sudo pacman -S --noconfirm ntp kitty alacritty wget figlet btop xdg-user-dirs code dolphin chezmoi neovim fzf lazygit
+sudo pacman -S --noconfirm ntp kitty alacritty wget figlet btop xdg-user-dirs code dolphin chezmoi neovim fzf lazygit zoxide zsh tmux less bat git-delta eza tldr thefuck
 
 yay -S ttf-meslo-nerd-font-powerlevel10k
 
