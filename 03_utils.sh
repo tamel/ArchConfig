@@ -19,7 +19,7 @@ check_continue "installing some utils and setting correct time"
 
 
 sudo pacman -Syy
-sudo pacman -S --noconfirm ntp kitty alacritty wget figlet btop xdg-user-dirs code dolphin chezmoi neovim fzf lazygit zoxide zsh tmux less bat git-delta eza tldr thefuck
+sudo pacman -S --noconfirm ntp kitty alacritty wget figlet btop xdg-user-dirs code dolphin chezmoi neovim fzf lazygit zoxide zsh tmux less bat git-delta eza tldr thefuck fd ripgrep
 
 yay -S ttf-meslo-nerd-font-powerlevel10k
 
@@ -40,5 +40,7 @@ EOF
 
 check_continue "opening /etc/pacman.conf"
 sudo vim /etc/pacman.conf
+
+sudo usermod -s /bin/zsh $username
 
 xdg-user-dirs-update
